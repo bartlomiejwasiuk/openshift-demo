@@ -8,7 +8,7 @@ public class HelloWorldController {
 
     @GetMapping("/hello")
     public String helloWorld() {
-    	return "Hello World! v2";
+    	return "Hello World! v3";
     }
     
     @GetMapping("/envs")
