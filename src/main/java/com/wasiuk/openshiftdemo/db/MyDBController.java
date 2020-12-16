@@ -7,20 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DBController {
+public class MyDBController {
 
 	@Autowired
 	DBService dbService;
 	
 	@GetMapping("/createDB")
-	private String createDB() {
-		Connection connection = dbService.connect();
+	private String createMyDB() {
 
-		dbService.close(connection);
 		return "done";
 	}
 	
-	@GetMapping("/createDB")
+	@GetMapping("/showDB")
 	private String showDBContent() {
 		
 		return null;
