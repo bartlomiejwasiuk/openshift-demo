@@ -1,5 +1,8 @@
 package com.wasiuk.openshiftdemo.helloworld;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +23,19 @@ public class HelloWorldController {
     	}
     	
         return sb.toString();
+    }
+    
+    @GetMapping("/scalling")
+    public String scalling() {
+    	String ret = "nie udalo sie";
+		try {
+	    	InetAddress ia;
+			ia = InetAddress.getLocalHost();
+			ret = ia.getHostName() + ", " + ia.getHostAddress() + ", " + ia.getLocalHost();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return ret;
     }
 }
