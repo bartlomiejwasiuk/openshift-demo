@@ -31,7 +31,7 @@ public class HelloWorldController {
 		try {
 	    	InetAddress ia;
 			ia = InetAddress.getLocalHost();
-			ret = ia.getHostName() + ", " + ia.getHostAddress() + ", " + ia.getLocalHost();
+			ret = ia.getHostName() + ", " + ia.getHostAddress() + ", " + InetAddress.getLocalHost();
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
